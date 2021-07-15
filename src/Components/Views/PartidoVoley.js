@@ -1,44 +1,42 @@
-import React,{useEffect,useState} from 'react'
-import {Link } from 'react-router-dom';
-import {db} from '../../config/firebase'
-import Barradenavegacion from './BarraNavegacion';
-import Footer from './Footer';
-import Background from '../../assets/img/Basquebolista-mujer.jpg';
+import React, { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
+import { db } from "../../config/firebase";
+import Barradenavegacion from "./BarraNavegacion";
+import Footer from "./Footer";
+import Background from "../../assets/img/Basquebolista-mujer.jpg";
 const PartidoVoley = () => {
-    const [partidosVoley,setPartidosVoley]=useState([]);
-    const [CurrentId,setCurrentId]= useState("");
-    const getPartidosVoley =async()=>{
-        await db.collection("Partidos-Voley")
-        .orderBy("Date","desc")
-        .limit(4)
-        .onSnapshot((querysnapshot)=>{
-            const docs =[]
-            querysnapshot.forEach((doc)=>{
-                docs.push({...doc.data(),id:doc.id})
-            });
-            setPartidosVoley(docs)
-        })
-    }
-    useEffect(()=>{
-        getPartidosVoley();
-    })
-    const getPartidoVoleyIndividual = async() => {
-      try {
-        if(CurrentId) {
-          const data = await db 
-          .collection("Partidos-Voley")
-          .doc(CurrentId)
-          .get()
-          console.log(data.id);
-        }
-      } catch (error) {
-        console.error(error)
+  const [partidosVoley, setPartidosVoley] = useState([]);
+  const [CurrentId, setCurrentId] = useState("");
+  const getPartidosVoley = async () => {
+    await db
+      .collection("Partidos-Voley")
+      .orderBy("Date", "desc")
+      .limit(4)
+      .onSnapshot((querysnapshot) => {
+        const docs = [];
+        querysnapshot.forEach((doc) => {
+          docs.push({ ...doc.data(), id: doc.id });
+        });
+        setPartidosVoley(docs);
+      });
+  };
+  useEffect(() => {
+    getPartidosVoley();
+  });
+  const getPartidoVoleyIndividual = async () => {
+    try {
+      if (CurrentId) {
+        const data = await db.collection("Partidos-Voley").doc(CurrentId).get();
+        console.log(data.id);
       }
+    } catch (error) {
+      console.error(error);
     }
-    return (
-      <>
+  };
+  return (
+    <>
       <Barradenavegacion />
-      <header style={{ marginLeft: "-11px"}}>
+      <header style={{ marginLeft: "-11px" }}>
         <div
           className="jumbotron jumbotron-fluid"
           style={{
@@ -119,7 +117,7 @@ const PartidoVoley = () => {
       {/* FOOTER */}
       <Footer />
     </>
-    )
-}
+  );
+};
 
-export default PartidoVoley
+export default PartidoVoley;
