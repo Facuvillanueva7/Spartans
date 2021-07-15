@@ -49,7 +49,7 @@ const NoticiaHandballRender = () => {
       </div>
       <br />
       <div className="col-12 p-2">
-        <table className="table table-bordered">
+        <table className="table table-bordered text-white">
           <thead>
             <tr>
               <th>Fecha</th>
