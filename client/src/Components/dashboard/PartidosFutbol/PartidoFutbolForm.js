@@ -149,7 +149,7 @@ PartidoFutbolImg3.on(
  const uploadImgD = () => {
   const PartidoFutbolImg4 = storage
   .ref(`Partidos-Futbol-Images-4/${file4.name}`)
-  .put(file2);
+  .put(file4);
 PartidoFutbolImg4.on(
   "state_changed",
   (snapshot) => {

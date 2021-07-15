@@ -12,6 +12,10 @@ const PartidoVoleyInd = () => {
     const [MVP_2,setMVP_2] = useState("")
     const [PartidoVoleyImgA,setPartidoVoleyImgA] = useState("")
     const [PartidoVoleyImgB,setPartidoVoleyImgB] = useState("")
+    const [PartidoVoleyImgC,setPartidoVoleyImgC] = useState("")
+    const [PartidoVoleyImgD,setPartidoVoleyImgD] = useState("")
+    const [PartidoVoleyImgE,setPartidoVoleyImgE] = useState("")
+
     const getPartidoVoleyIndividual = async () => {
         await db
         .collection("Partidos-Voley")
@@ -25,6 +29,9 @@ const PartidoVoleyInd = () => {
                 setUltimo_Partido(doc.data().Ultimo_Partido)
                 setPartidoVoleyImgA(doc.data().imgA)
                 setPartidoVoleyImgB(doc.data().imgB)
+                setPartidoVoleyImgC(doc.data().imgC)
+                setPartidoVoleyImgD(doc.data().imgD)
+                setPartidoVoleyImgE(doc.data().imgE)
                 setMVP_1(doc.data().MVP_1)
                 setMVP_2(doc.data().MVP_2)
                 console.log("Document data: ", Equipo_1,Equipo_2,Fecha_Partido,Ultimo_Partido);
@@ -49,6 +56,9 @@ const PartidoVoleyInd = () => {
                 <p>{MVP_2}</p>
                 <img src={PartidoVoleyImgA} alt="sample" style={{width:"50%"}}/>
                 <img src={PartidoVoleyImgB} alt="sample" style={{width:"50%"}}/>
+                <img src={PartidoVoleyImgC} alt="sample" style={{width:"50%"}}/>
+                <img src={PartidoVoleyImgD} alt="sample" style={{width:"50%"}}/>
+                <img src={PartidoVoleyImgE} alt="sample" style={{width:"50%"}}/>
             </div>
         </div>
         </>
