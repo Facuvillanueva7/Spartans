@@ -109,7 +109,7 @@ const PartidoFutbol = () => {
               </h4>
               <p className="text-center text-white">{partido.Fecha_Partido}</p>
               <Link to={"./partidofutbol/" + partido.id}>
-                <h4 onClick={() => setCurrentId}> ir al evento</h4>
+                <h4 onClick={() => setCurrentId}> ir al evento Test de github</h4>
               </Link>
             </div>
           ))}
