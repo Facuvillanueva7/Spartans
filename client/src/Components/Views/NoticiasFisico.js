@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { db } from "../../config/firebase";
-import BarraNavegacion from '../Views/BarraNavegacion';
-import Footer from '../Views/Footer';
+import BarraNavegacion from "../Views/BarraNavegacion";
+import Footer from "../Views/Footer";
 //CSS
 import "../../assets/bootstrap/css/bootstrap.min.css";
 import "../../assets/fonts/font-awesome.min.css";
@@ -35,7 +35,7 @@ const NoticiasFisico = () => {
   });
   return (
     <>
-    <BarraNavegacion/>
+      <BarraNavegacion/>
       <header style={{ marginLeft: "-11px" }}>
         <div
           className="jumbotron jumbotron-fluid"
@@ -88,13 +88,13 @@ const NoticiasFisico = () => {
                   <img
                     className="img-fluid"
                     src={noticia?.NoticiaFisicoImg}
-                    style={{ width: "50%" }}
                     alt="sample"
                   />
                 )}
+                <h3 className="text-white">{noticia.Title}</h3>
+                <p className="text-white-50 description">{noticia.Body.substring(0, 100)}</p>
                 <Link to={"./noticiafisico/" + noticia.id}>
-                  <h3 className="text-white">{noticia.Title}</h3>
-                  <p className="text-white-50 description">{noticia.Body}</p>
+                  <p>Leer Mas</p>
                 </Link>
               </div>
             ))}

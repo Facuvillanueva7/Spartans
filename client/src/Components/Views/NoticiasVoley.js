@@ -23,7 +23,7 @@ const NoticiasVoley = () => {
   });
   return (
     <>
-      <BarraNavegacion />
+      <BarraNavegacion/>
       <header style={{ marginLeft: "-11px" }}>
         <div
           className="jumbotron jumbotron-fluid"
@@ -74,7 +74,7 @@ const NoticiasVoley = () => {
               {noticia.NoticiaVoleyImg && (
                 <img
                   src={noticia?.NoticiaVoleyImg}
-                  style={{ width: "50%" }}
+                  className="img-fuid"
                   alt="sample"
                 />
               )}
@@ -87,7 +87,7 @@ const NoticiasVoley = () => {
           ))}
         </div>
       </div>
-      <Footer />
+      <Footer/>
     </>
   );
 };
