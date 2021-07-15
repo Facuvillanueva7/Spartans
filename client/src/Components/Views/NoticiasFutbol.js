@@ -84,30 +84,23 @@ const NoticiasFutbol = () => {
       >
         <div className="container">
           <div className="row">
-          {noticiasFutbol.map((noticia) => (
-            <div className="col-sm-6 col-md-3 item" key={noticia.id}>
-              <div className="card-body">
-                <div className="d-flex justify-content-between">
-                  {noticia.NoticiaFutbolImg && (
-                    <img
-                      src={noticia?.NoticiaFutbolImg}
-                      alt="sample"
-                      onClick={getNoticiaFutbolIndividual}
-                    />
-                  )}
-                  <Link to={"./noticiafutbol/" + noticia.id}>
-                    <h4 onClick={() => setCurrentId}>{noticia.Title}</h4>
-
-                    <p>{noticia.Body}</p>
-                    <p>{noticia.Copete}</p>
-                    <p>{noticia.Description}</p>
-                    <p>{noticia.Fuente}</p>
-                    <p>{noticia.Fecha}</p>
-                  </Link>
-                </div>
+            {noticiasFutbol.map((noticia) => (
+              <div className="col-sm-6 col-md-3 item" key={noticia.id}>
+                {noticia.NoticiaFutbolImg && (
+                  <img
+                    src={noticia?.NoticiaFutbolImg}
+                    className="img-fluid"
+                    alt="sample"
+                    onClick={getNoticiaFutbolIndividual}
+                  />
+                )}
+                <h3 onClick={() => setCurrentId}>{noticia.Title}</h3>
+                <p>{noticia.Body.substring(0, 100)}</p>
+                <Link to={"./noticiafutbol/" + noticia.id}>
+                  <p>Leer Mas</p>
+                </Link>
               </div>
-            </div>
-          ))}
+            ))}
           </div>
         </div>
       </div>

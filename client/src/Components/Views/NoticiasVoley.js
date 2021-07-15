@@ -23,7 +23,7 @@ const NoticiasVoley = () => {
   });
   return (
     <>
-      <BarraNavegacion />
+      <BarraNavegacion/>
       <header style={{ marginLeft: "-11px" }}>
         <div
           className="jumbotron jumbotron-fluid"
@@ -87,7 +87,7 @@ const NoticiasVoley = () => {
           ))}
         </div>
       </div>
-      <Footer />
+      <Footer/>
     </>
   );
 };

@@ -35,7 +35,7 @@ const NoticiasFisico = () => {
   });
   return (
     <>
-      <BarraNavegacion />
+      <BarraNavegacion/>
       <header style={{ marginLeft: "-11px" }}>
         <div
           className="jumbotron jumbotron-fluid"
@@ -92,7 +92,7 @@ const NoticiasFisico = () => {
                   />
                 )}
                 <h3 className="text-white">{noticia.Title}</h3>
-                <p className="text-white-50 description">{noticia.Body}</p>
+                <p className="text-white-50 description">{noticia.Body.substring(0, 100)}</p>
                 <Link to={"./noticiafisico/" + noticia.id}>
                   <p>Leer Mas</p>
                 </Link>
@@ -101,7 +101,7 @@ const NoticiasFisico = () => {
           </div>
         </div>
       </div>
-      <Footer />
+      <Footer/>
     </>
   );
 };
