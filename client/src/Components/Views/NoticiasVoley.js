@@ -74,7 +74,7 @@ const NoticiasVoley = () => {
               {noticia.NoticiaVoleyImg && (
                 <img
                   src={noticia?.NoticiaVoleyImg}
-                  style={{ width: "50%" }}
+                  className="img-fuid"
                   alt="sample"
                 />
               )}

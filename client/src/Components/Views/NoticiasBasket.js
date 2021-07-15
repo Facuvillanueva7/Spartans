@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { db } from "../../config/firebase";
-import BarraNavegacion from '../Views/BarraNavegacion';
-import Footer from '../Views/Footer';
+import BarraNavegacion from "../Views/BarraNavegacion";
+import Footer from "../Views/Footer";
 
 //CSS
 import "../../assets/bootstrap/css/bootstrap.min.css";
@@ -50,8 +50,8 @@ const NoticiasBasket = () => {
   };
   return (
     <>
-    <BarraNavegacion/>
-    <header style={{ marginLeft: "-11px" }}>
+      <BarraNavegacion />
+      <header style={{ marginLeft: "-11px" }}>
         <div
           className="jumbotron jumbotron-fluid"
           style={{
@@ -103,7 +103,6 @@ const NoticiasBasket = () => {
                   <img
                     className="img-fluid"
                     src={noticia?.imgA}
-                    style={{ width: "50%" }}
                     alt="sample"
                     onClick={getNoticiaBasketIndividual}
                   />
@@ -112,29 +111,28 @@ const NoticiasBasket = () => {
                   <img
                     className="img-fluid"
                     src={noticia?.imgB}
-                    style={{ width: "50%" }}
                     alt="sample"
                     onClick={getNoticiaBasketIndividual}
                   />
                 )}
+                <h3
+                  className="text-white name"
+                  onClick={() => setCurrentId(noticia.id)}
+                >
+                  {noticia.Title}
+                </h3>
+                <p className="text-white-50 description">
+                  {noticia.Body.substring(0, 100)}
+                </p>
                 <Link to={"./noticiabasket/" + noticia.id}>
-                  <h3
-                    className="text-white name"
-                    onClick={() => setCurrentId(noticia.id)}
-                  >
-                    {noticia.Title}
-                  </h3>
-                  <p className="text-white-50 description">
-                    {noticia.Body.substring(0, 100)}
-                  </p>
-                  <i className="fa fa-arrow-circle-right"></i>
+                  <p>Leer Mas</p>
                 </Link>
               </div>
             ))}
           </div>
         </div>
       </div>
-      <Footer/>
+      <Footer />
     </>
   );
 };
