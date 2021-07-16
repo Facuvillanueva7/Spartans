@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { db } from "../../config/firebase";
-import BarraNavegacion from '../Views/BarraNavegacion';
-import Footer from '../Views/Footer';
+import BarraNavegacion from "../Views/BarraNavegacion";
+import Footer from "../Views/Footer";
 const NoticiasHandball = () => {
   const [noticiasHandball, setNoticiasHandball] = useState([]);
   const getNoticiasHandball = async () => {
@@ -23,7 +23,7 @@ const NoticiasHandball = () => {
   });
   return (
     <>
-    <BarraNavegacion/>
+      <BarraNavegacion />
       <header style={{ marginLeft: "-11px" }}>
         <div
           className="jumbotron jumbotron-fluid"
@@ -79,7 +79,7 @@ const NoticiasHandball = () => {
                     alt="sample"
                   />
                 )}
-                <h3 className="text-white">{noticia.Title}</h3>
+                <h3 className="text-white description">{noticia.Title}</h3>
                 <p>{noticia.Body.substring(0, 100)}</p>
                 <Link to={"./noticiahandball/" + noticia.id}>
                   <p>Leer Mas</p>
@@ -89,7 +89,7 @@ const NoticiasHandball = () => {
           </div>
         </div>
       </div>
-      <Footer/>
+      <Footer />
     </>
   );
 };
