@@ -83,7 +83,7 @@ const NoticiasFisico = () => {
         <div className="container">
           <div className="row article">
             {noticiasFisico.map((noticia) => (
-              <div className="col-sm-6 col-md-4 item" key={noticia.id}>
+              <div className="col-sm-6 col-md-3 item" key={noticia.id}>
                 {noticia.NoticiaFisicoImg && (
                   <img
                     className="img-fluid"

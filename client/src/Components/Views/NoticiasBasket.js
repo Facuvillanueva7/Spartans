@@ -50,7 +50,7 @@ const NoticiasBasket = () => {
   };
   return (
     <>
-      <BarraNavegacion />
+      <BarraNavegacion/>
       <header style={{ marginLeft: "-11px" }}>
         <div
           className="jumbotron jumbotron-fluid"
@@ -98,7 +98,7 @@ const NoticiasBasket = () => {
         <div className="container">
           <div className="row article">
             {noticiasBasket.map((noticia) => (
-              <div className="col-sm-6 col-md-4 item" key={noticia.id}>
+              <div className="col-sm-6 col-md-3 item" key={noticia.id}>
                 {noticia.imgA && (
                   <img
                     className="img-fluid"
@@ -132,7 +132,7 @@ const NoticiasBasket = () => {
           </div>
         </div>
       </div>
-      <Footer />
+      <Footer/>
     </>
   );
 };
