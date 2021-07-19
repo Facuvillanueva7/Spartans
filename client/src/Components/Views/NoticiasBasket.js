@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import { db } from "../../config/firebase";
 import BarraNavegacion from "../Views/BarraNavegacion";
 import Footer from "../Views/Footer";
+import Background from '../../assets/img/Basquebolista-mujer.jpg';
 
 //CSS
 import "../../assets/bootstrap/css/bootstrap.min.css";
@@ -84,6 +85,7 @@ const NoticiasBasket = () => {
               odio, dapibus ac facilisis in, egestas eget quam.
             </p>
             <img
+              src={Background}
               className="img-fluid"
               style={{ position: "relative", zIndex: "1", width: "100%" }}
               alt="Partidos Basket"

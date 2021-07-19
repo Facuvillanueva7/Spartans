@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import { db } from "../../config/firebase";
 import BarraNavegacion from "../Views/BarraNavegacion";
 import Footer from "../Views/Footer";
+import Background from "../../assets/img/Basquebolista-mujer.jpg";
 const NoticiasFutbol = () => {
   const [noticiasFutbol, setNoticiasFutbol] = useState([]);
   const [CurrentId, setCurrentId] = useState();
@@ -72,6 +73,7 @@ const NoticiasFutbol = () => {
             </p>
             <img
               className="img-fluid"
+              src={Background}
               style={{ position: "relative", zIndex: "1", width: "100%" }}
               alt="Partidos Basket"
             />

@@ -14,6 +14,8 @@ import "../../assets/css/Footer-Dark.css";
 import "../../assets/css/Projects-Clean.css";
 import "../../assets/css/Social-Icons.css";
 import "../../assets/css/styles.css";
+import Background from "../../assets/img/Basquebolista-mujer.jpg";
+
 
 const NoticiasFisico = () => {
   const [noticiasFisico, setNoticiasFisico] = useState([]);
@@ -70,6 +72,7 @@ const NoticiasFisico = () => {
             </p>
             <img
               className="img-fluid"
+              src={Background}
               style={{ position: "relative", zIndex: "1", width: "100%" }}
               alt="Partidos Basket"
             />
