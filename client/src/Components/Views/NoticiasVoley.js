@@ -23,7 +23,7 @@ const NoticiasVoley = () => {
   });
   return (
     <>
-      <BarraNavegacion/>
+      <BarraNavegacion />
       <header style={{ marginLeft: "-11px" }}>
         <div
           className="jumbotron jumbotron-fluid"
@@ -69,25 +69,27 @@ const NoticiasVoley = () => {
         style={{ backgroundColor: "rgba(0,0,0,0.1)" }}
       >
         <div className="container">
-          {noticiasVoley.map((noticia) => (
-            <div className="col-sm-6 col-md-3 item" key={noticia.id}>
-              {noticia.NoticiaVoleyImg && (
-                <img
-                  src={noticia?.NoticiaVoleyImg}
-                  className="img-fuid"
-                  alt="sample"
-                />
-              )}
+          <div className="row">
+            {noticiasVoley.map((noticia) => (
+              <div className="col-sm-6 col-md-3 item" key={noticia.id}>
+                {noticia.NoticiaVoleyImg && (
+                  <img
+                    src={noticia?.NoticiaVoleyImg}
+                    className="img-fuid"
+                    alt="sample"
+                  />
+                )}
                 <h3 className="text-white">{noticia.Title}</h3>
                 <p>{noticia.Body.substring(0, 100)}</p>
                 <Link to={"./noticiavoley/" + noticia.id}>
-                <p>Leer Mas</p>
-              </Link>
-            </div>
-          ))}
+                  <p>Leer Mas</p>
+                </Link>
+              </div>
+            ))}
+          </div>
         </div>
       </div>
-      <Footer/>
+      <Footer />
     </>
   );
 };
