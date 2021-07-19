@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import { db } from "../../config/firebase";
 import BarraNavegacion from "../Views/BarraNavegacion";
 import Footer from "../Views/Footer";
+import Background from '../../assets/img/Basquebolista-mujer.jpg';
 const NoticiasVoley = () => {
   const [noticiasVoley, setNoticiasVoley] = useState([]);
   const getNoticiasVoley = async () => {
@@ -23,7 +24,7 @@ const NoticiasVoley = () => {
   });
   return (
     <>
-      <BarraNavegacion/>
+      <BarraNavegacion />
       <header style={{ marginLeft: "-11px" }}>
         <div
           className="jumbotron jumbotron-fluid"
@@ -58,6 +59,7 @@ const NoticiasVoley = () => {
             </p>
             <img
               className="img-fluid"
+              src={Background}
               style={{ position: "relative", zIndex: "1", width: "100%" }}
               alt="Partidos Basket"
             />
@@ -69,25 +71,27 @@ const NoticiasVoley = () => {
         style={{ backgroundColor: "rgba(0,0,0,0.1)" }}
       >
         <div className="container">
-          {noticiasVoley.map((noticia) => (
-            <div className="col-sm-6 col-md-3 item" key={noticia.id}>
-              {noticia.NoticiaVoleyImg && (
-                <img
-                  src={noticia?.NoticiaVoleyImg}
-                  className="img-fuid"
-                  alt="sample"
-                />
-              )}
+          <div className="row">
+            {noticiasVoley.map((noticia) => (
+              <div className="col-sm-6 col-md-3 item" key={noticia.id}>
+                {noticia.NoticiaVoleyImg && (
+                  <img
+                    src={noticia?.NoticiaVoleyImg}
+                    className="img-fuid"
+                    alt="sample"
+                  />
+                )}
                 <h3 className="text-white">{noticia.Title}</h3>
                 <p>{noticia.Body.substring(0, 100)}</p>
                 <Link to={"./noticiavoley/" + noticia.id}>
-                <p>Leer Mas</p>
-              </Link>
-            </div>
-          ))}
+                  <p>Leer Mas</p>
+                </Link>
+              </div>
+            ))}
+          </div>
         </div>
       </div>
-      <Footer/>
+      <Footer />
     </>
   );
 };
